@@ -18,5 +18,5 @@ public class CustomerResultSetHelper {
         return cust;
     }
 
-    
+
 }

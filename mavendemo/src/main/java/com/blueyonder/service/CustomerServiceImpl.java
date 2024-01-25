@@ -2,6 +2,7 @@ package com.blueyonder.service;
 
 import com.blueyonder.dao.CustomerDAO;
 import com.blueyonder.dao.CustomerDAOImpl;
+import com.blueyonder.exceptions.CustomerNotFoundException;
 import com.blueyonder.model.Customer;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer updateCustomer(Customer customer) {
+    public Customer updateCustomer(Customer customer) throws CustomerNotFoundException {
         return customerDAO.updateCustomer(customer);
     }
 

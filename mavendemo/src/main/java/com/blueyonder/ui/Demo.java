@@ -1,5 +1,6 @@
 package com.blueyonder.ui;
 
+import com.blueyonder.exceptions.CustomerNotFoundException;
 import com.blueyonder.model.Address;
 import com.blueyonder.model.Customer;
 import com.blueyonder.service.CustomerService;
@@ -30,5 +31,11 @@ public class Demo {
 
         Customer cust = customerService.getCustomerById(11);
         System.out.println(cust);
+
+        try {
+            customerService.updateCustomer(customer);
+        } catch (CustomerNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

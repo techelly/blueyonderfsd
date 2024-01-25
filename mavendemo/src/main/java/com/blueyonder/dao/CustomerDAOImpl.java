@@ -1,5 +1,6 @@
 package com.blueyonder.dao;
 
+import com.blueyonder.exceptions.CustomerNotFoundException;
 import com.blueyonder.model.Customer;
 import com.blueyonder.util.CustomerResultSetHelper;
 import com.blueyonder.util.DBConnectionUtil;
@@ -18,8 +19,8 @@ public class CustomerDAOImpl implements CustomerDAO{
             pStmt.setInt(1,customer.getCustomerId());
             pStmt.setString(2,customer.getCustomerName());
             pStmt.setDate(3,Date.valueOf(customer.getDateOfBirth()));
-            boolean isQueryExecuted = pStmt.execute();
-            if(isQueryExecuted){
+            int rows = pStmt.executeUpdate();
+            if(rows>0){
                 return customer;
             }
         } catch (SQLException e) {
@@ -55,7 +56,36 @@ public class CustomerDAOImpl implements CustomerDAO{
     }
 
     @Override
-    public Customer updateCustomer(Customer customer) {
+    public Customer updateCustomer(Customer customer) throws CustomerNotFoundException {
+        //Lookup for customer using customerId -- call getCustomerById(customer.getCustomerId)
+
+        try {
+            Connection conn = DBConnectionUtil.getDBConnection();
+            //Statement stmt = conn.createStatement();
+            //execute statement
+            //PrepareStatement object
+            PreparedStatement pStmt= conn.prepareStatement(QueryMapper.GET_CUSTOMER_BY_ID);
+            pStmt.setInt(1,customer.getCustomerId());
+            ResultSet rs = pStmt.executeQuery();
+            if(rs.next()){
+                if(rs.getInt(1) == customer.getCustomerId()){
+
+                    //UPDATE CUSTOMER SET customername=?,dateofbirth=? where customerid=?;
+                    //pstmt.setString(1,)
+                    //pstmt.setDate(2,)
+                    //pstmt.setInt(3,)
+                    //Write logic to update
+                }
+
+            }else{
+                throw new CustomerNotFoundException();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        //if customer exists in DB then using setter and getter update the values
+        //Then call addCustomer(customer)
+        //else throw exception CustomerNotFoundException
         return null;
     }
 

@@ -1,5 +1,6 @@
 package com.blueyonder.service;
 
+import com.blueyonder.exceptions.CustomerNotFoundException;
 import com.blueyonder.model.Customer;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface CustomerService {
     //Retrieve
     public Customer getCustomerById(Integer customerId);
     //Update
-    public Customer updateCustomer(Customer customer);
+    public Customer updateCustomer(Customer customer) throws CustomerNotFoundException;
     //Delete
     public String deleteCustomerById(Integer customerId);
 

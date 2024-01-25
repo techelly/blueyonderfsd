@@ -1,5 +1,6 @@
 package com.blueyonder.dao;
 
+import com.blueyonder.exceptions.CustomerNotFoundException;
 import com.blueyonder.model.Customer;
 import java.util.List;
 public interface CustomerDAO {
@@ -8,7 +9,7 @@ public interface CustomerDAO {
     //Retrieve
     public Customer getCustomerById(Integer customerId);
     //Update
-    public Customer updateCustomer(Customer customer);
+    public Customer updateCustomer(Customer customer) throws CustomerNotFoundException;
     //Delete
     public String deleteCustomerById(Integer customerId);
 
