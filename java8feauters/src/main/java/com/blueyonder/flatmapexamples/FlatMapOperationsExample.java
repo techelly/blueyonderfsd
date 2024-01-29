@@ -1,6 +1,8 @@
 package com.blueyonder.flatmapexamples;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +34,11 @@ public class FlatMapOperationsExample {
                 .collect(Collectors.toList());
 
         System.out.println(listOfPhone);
+
+        String str = "2024-01-15";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        System.out.println(LocalDate.parse(str, dtf));
+
     }
 
 }
