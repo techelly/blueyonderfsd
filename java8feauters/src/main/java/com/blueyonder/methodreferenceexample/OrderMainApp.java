@@ -43,5 +43,11 @@ public class OrderMainApp {
         System.out.println(orderAmount.getOrderAmount(150000.50));
         System.out.println("****************************************");
 
+        System.out.println("*************************");
+        Collections.sort(orderList, Comparator.comparing(Order::getAmount).thenComparing(Order::getCurrency));
+        orderList.forEach(System.out::println);
+
+        Collections.sort(orderList,Collections.reverseOrder(Comparator.comparing(Order::getAmount)));
+
     }
 }
