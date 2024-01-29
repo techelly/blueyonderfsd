@@ -11,14 +11,15 @@ public class Order {
         private LocalDate orderDate;
         private LocalDate deliveryDate;
         private List<Product> products;
-        private Integer customerId;
+        private Customer customer;
 
-        public Order(Integer id, LocalDate orderDate, LocalDate deliveryDate,String status, Integer customerId) {
+        public Order(Integer id, LocalDate orderDate, LocalDate deliveryDate, List<Product> products,String status,Customer customer) {
                 this.id = id;
                 this.status = status;
                 this.orderDate = orderDate;
                 this.deliveryDate = deliveryDate;
-                this.customerId = customerId;
+                this.products = products;
+                this.customer = customer;
         }
 
         public Integer getId() {
@@ -61,12 +62,12 @@ public class Order {
                 this.products = products;
         }
 
-        public Integer getCustomerId() {
-                return customerId;
+        public Customer getCustomer() {
+                return customer;
         }
 
-        public void setCustomerId(Integer customerId) {
-                this.customerId = customerId;
+        public void setCustomer(Customer customer) {
+                this.customer = customer;
         }
 
         @Override
@@ -77,7 +78,7 @@ public class Order {
                         ", orderDate=" + orderDate +
                         ", deliveryDate=" + deliveryDate +
                         ", products=" + products +
-                        ", customerId=" + customerId +
+                        ", customer=" + customer +
                         '}';
         }
 }
