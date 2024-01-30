@@ -7,13 +7,13 @@ import java.util.List;
 public class Order {
 
         private Integer id;
-        private String status;
+        private OrderStatus status;
         private LocalDate orderDate;
         private LocalDate deliveryDate;
         private List<Product> products;
         private Customer customer;
 
-        public Order(Integer id, LocalDate orderDate, LocalDate deliveryDate, List<Product> products,String status,Customer customer) {
+        public Order(Integer id, LocalDate orderDate, LocalDate deliveryDate, List<Product> products,OrderStatus status,Customer customer) {
                 this.id = id;
                 this.status = status;
                 this.orderDate = orderDate;
@@ -30,11 +30,11 @@ public class Order {
                 this.id = id;
         }
 
-        public String getStatus() {
+        public OrderStatus getStatus() {
                 return status;
         }
 
-        public void setStatus(String status) {
+        public void setStatus(OrderStatus status) {
                 this.status = status;
         }
 
