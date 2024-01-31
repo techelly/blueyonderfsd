@@ -1,6 +1,7 @@
 package designpattern.chainorresp;
 
-//This class will store the amount to dispense and used by the chain implementations
+//This class will store the amount to dispense 
+//and used by the chain implementations
 public class Currency {
 	private int amount;
 
