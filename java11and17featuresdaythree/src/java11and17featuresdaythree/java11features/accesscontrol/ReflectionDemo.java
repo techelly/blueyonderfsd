@@ -7,7 +7,8 @@ public class ReflectionDemo {
 	/**
  * 
  * Reflection is a feature in the Java language.
- * It allows an executing Java program to examine or "introspect" upon iteself,and 
+ * It allows an executing Java program to examine or 
+ * "introspect" upon itself,and 
  * manipulate internal properties of the program.
  *
  */

@@ -8,5 +8,5 @@ package java11and17featuresdaythree.java17features.recordclasses;
  *a header, which lists the "components" of the record; and a body.
  */
 public record Rectangle(double length, double width) {
-
+	public static String message ="Hello";
 }

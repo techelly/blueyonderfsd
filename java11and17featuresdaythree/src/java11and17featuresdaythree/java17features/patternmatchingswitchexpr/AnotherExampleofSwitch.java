@@ -12,10 +12,11 @@ public class AnotherExampleofSwitch {
 	}
 	public static String guardedPattern(List<Integer> coll) {
 		
-		  return switch(coll) {
-		    case (coll.size() > 10) -> 
+		int length =coll.size();
+		  return switch(length) {
+		    case (length > 10) -> 
 		        "I am a big List. My size is " + coll.size();
-		    case coll.size()<10-> 
+		    case length<10-> 
 		        "I am a small List. My size is " + coll.size();
 		    default -> 
 		        "Unsupported collection: " + coll.getClass();

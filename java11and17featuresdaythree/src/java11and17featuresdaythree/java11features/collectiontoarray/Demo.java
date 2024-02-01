@@ -12,7 +12,8 @@ public class Demo {
 		list.add(10);
 		list.add(11);
 		/**
-		 * The new default toArray() method is used to easily convert a collection to 
+		 * The new default toArray() method is used to easily 
+		 * convert a collection to 
 		 * an array of the correct type
 		 * 
 		 */

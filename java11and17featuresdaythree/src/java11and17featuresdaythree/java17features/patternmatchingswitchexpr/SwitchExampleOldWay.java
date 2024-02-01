@@ -2,7 +2,7 @@ package java11and17featuresdaythree.java17features.patternmatchingswitchexpr;
 
 public class SwitchExampleOldWay {
 	public static void main(String[] args) {
-		String str = "";
+		String str = "sub";
 
 		int result = 0;
 		int a = 10, b = 20;

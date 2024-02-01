@@ -14,17 +14,20 @@ public class StringNewMethodDemo {
 		System.out.println("s2 is blank : "+s2.isBlank());
 		System.out.println("s3 is blank : "+s3.isBlank());
 		
-		//lines method - splits a string using line terminators and returns a stream
+		//lines method - splits a string using line terminators and 
+		//returns a stream
 		//line terminators are  new line feed-  \n ,or carriage return \r
 		//\n means new line -- It means that the cursor must go to the next line
-		//\r means carriage return -- The cursor should go back to the beginning of the line
+		//\r means carriage return -- The cursor should go back to the 
+		//beginning of the line
 		
 		String str = "Hello ! \n How are you ? \nNew String method\rdemo";
 		System.out.println(str);
 		List<String> listOfLines = str.lines().collect(Collectors.toList());
 		System.out.println(listOfLines);
 		/**
-		 * In windows Carriage Return i.e. CR (\r) and the \n (Line Feed or LF) both are there
+		 * In windows Carriage Return i.e. CR (\r) and the \n (Line Feed or LF)
+		 *  both are there
 		 * It means \r  and \n is a combination \r\n
 		 * 
 		 * In UNIX only \n or new line feed
