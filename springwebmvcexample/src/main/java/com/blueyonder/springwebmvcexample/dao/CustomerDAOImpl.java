@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.blueyonder.springwebmvcexample.dto.CustomerDTO;
 import com.blueyonder.springwebmvcexample.exceptions.CustomerNotFoundException;
 
-@Component
+@Component("customerDAO")
 public class CustomerDAOImpl implements CustomerDAO {
 
 	@Autowired
