@@ -15,7 +15,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Override
 	public CustomerDTO getCustomerById(Integer custId) throws CustomerNotFoundException {
 		//From DB you may get null values then throw exception
-		if (custDto != null) {
+		if (custDto.getCustId() == null && custDto.getCustName()==null) {
 			custDto.setCustId(15);
 			custDto.setCustName("BlueYonder");
 		} else {
