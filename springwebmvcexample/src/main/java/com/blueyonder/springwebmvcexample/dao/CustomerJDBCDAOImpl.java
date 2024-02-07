@@ -2,6 +2,7 @@ package com.blueyonder.springwebmvcexample.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -17,14 +18,18 @@ public class CustomerJDBCDAOImpl implements CustomerDAO {
 	
 	@Override
 	public CustomerDTO getCustomerById(Integer custId) throws CustomerNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from customer_details where custid=?";
+		Object[] parameters = {custId};
+		CustomerDTO customerDTO=jdbcTemplate.queryForObject(sql,BeanPropertyRowMapper.newInstance(CustomerDTO.class),parameters );
+		return customerDTO;
 	}
 
 	@Override
 	public CustomerDTO getCustomerByName(String customerName) throws CustomerNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from customer_details where custname=?";
+		Object[] parameters = {customerName};
+		CustomerDTO customerDTO=jdbcTemplate.queryForObject(sql,BeanPropertyRowMapper.newInstance(CustomerDTO.class),parameters );
+		return customerDTO;
 	}
 
 	@Override
