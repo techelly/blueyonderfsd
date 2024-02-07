@@ -11,4 +11,10 @@ public class CustomerUtility {
 		customer.setCustName(customerDTO.getCustName());
 		return customer;
 	}
+	public static CustomerDTO convertCustomerToCustomerDTO(Customer customer) {
+		CustomerDTO customerDTO = new CustomerDTO();
+		customerDTO.setCustId(customer.getCustId());
+		customerDTO.setCustName(customer.getCustName());
+		return customerDTO;
+	}
 }

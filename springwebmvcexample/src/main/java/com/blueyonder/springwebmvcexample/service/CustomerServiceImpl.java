@@ -18,4 +18,22 @@ public class CustomerServiceImpl implements CustomerService {
 		return custDAO.getCustomerById(custId);
 	}
 
+	@Override
+	public CustomerDTO getCustomerByName(String customerName) throws CustomerNotFoundException {
+		// TODO Auto-generated method stub
+		return custDAO.getCustomerByName(customerName);
+	}
+
+	@Override
+	public boolean deleteCustomerById(Integer custId) throws CustomerNotFoundException {
+		// TODO Auto-generated method stub
+		return custDAO.deleteCustomerById(custId);
+	}
+
+	@Override
+	public boolean createCustomer(CustomerDTO customerDTO) {
+
+		return custDAO.createCustomer(customerDTO);
+	}
+
 }
