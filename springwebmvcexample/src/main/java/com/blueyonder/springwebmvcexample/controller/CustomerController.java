@@ -2,6 +2,7 @@ package com.blueyonder.springwebmvcexample.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,14 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
+	//Load Customer Form
+	//URL: http://localhost:8080/customerapp/customerform
+	@GetMapping("/customerform")
+	public ModelAndView getCustomerForm(@ModelAttribute Customer customer) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("customerform");
+		return mv;
+	}
 	// Create
 	// URL http://localhost:8080/customerapp/addcustomer
 	@PostMapping("/addcustomer")
