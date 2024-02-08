@@ -1,5 +1,7 @@
 package jpaexampleapp.service;
 
+import java.util.List;
+
 import jpaexampleapp.dao.CustomerDAO;
 import jpaexampleapp.dao.CustomerDAOImpl;
 import jpaexampleapp.entities.Customer;
@@ -32,6 +34,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 		return custDAO.createCustomer(customer);
 
+	}
+
+	@Override
+	public List<Customer> getAllCustomer() {
+		
+		return custDAO.getAllCustomer();
 	}
 
 }
