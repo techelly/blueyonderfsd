@@ -46,8 +46,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public String deleteCustomer(Customer customer) throws CustomerNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		if(custRepo.existsById(customer.getCustomerId())) {
+			custRepo.delete(customer);
+			return "Customer deleted successfully";
+		}else {
+			throw new CustomerNotFoundException("customer with customer id "+customer.getCustomerId()+" doesn't exists");
+			
+		}
 	}
 
 	
