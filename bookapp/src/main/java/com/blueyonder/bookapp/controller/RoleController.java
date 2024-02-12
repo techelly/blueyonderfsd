@@ -13,7 +13,7 @@ import com.blueyonder.bookapp.exceptions.RoleNotFoundException;
 import com.blueyonder.bookapp.service.RoleService;
 
 @RestController
-@RequestMapping("/bookapp/api/v1")
+@RequestMapping("/bookapp/api/v1/role")
 public class RoleController {
 	
 	@Autowired
