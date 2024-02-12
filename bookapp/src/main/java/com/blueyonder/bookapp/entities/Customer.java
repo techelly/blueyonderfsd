@@ -3,8 +3,6 @@ package com.blueyonder.bookapp.entities;
 import java.time.LocalDate;
 import java.util.Set;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
