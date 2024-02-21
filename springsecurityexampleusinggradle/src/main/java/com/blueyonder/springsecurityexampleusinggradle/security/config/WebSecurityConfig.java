@@ -57,12 +57,12 @@ public class WebSecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 
-
+	public final static String[] PUBLIC_REQUEST_MATCHERS = { "/api/auth/**", "/api-docs/**", "/swagger-ui/**" };
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors(AbstractHttpConfigurer :: disable).csrf(AbstractHttpConfigurer::disable)
-				.authorizeHttpRequests(req -> req.requestMatchers("/api/auth/**").permitAll()
+				.authorizeHttpRequests(req -> req.requestMatchers(PUBLIC_REQUEST_MATCHERS).permitAll()
 						.requestMatchers("/api/toyandbooklibapp/**").permitAll()
 						.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
